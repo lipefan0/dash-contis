@@ -7,7 +7,7 @@ declare module "next-auth" {
       name: string;
       email: string;
       title: string;
-      src: string;
+      srcBI: string;
     } & DefaultSession["user"]; // Inclui os campos padrão do usuário com campos personalizados
   }
 }

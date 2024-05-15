@@ -1,17 +1,22 @@
 [
   {
-    "id": "1",
     "name": "GlobalK",
     "email": "felipe.fernandes@contis.com.br",
-    "password": 123,
+    "password": "123",
     "title": "MULTIPLIC FELIPE",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   },
   {
-    "id": "2",
     "name": "AdoroMato",
     "email": "adoromato@contis.com.br",
-    "password": 123,
+    "password": "123",
+    "title": "MULTIPLIC FELIPE",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+  },
+  {
+    "name": "CarolContis",
+    "email": "carol@contis.com.br",
+    "password": "123",
     "title": "MULTIPLIC FELIPE",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   }
