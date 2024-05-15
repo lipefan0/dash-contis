@@ -10,21 +10,32 @@ async function main() {
   const usersData = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
 
   for (const userData of usersData) {
-    // Verifique se userData.password é uma string
-    if (typeof userData.password !== "string") {
-      throw new Error(`Invalid password for user ${userData.email}`);
-    }
+    try {
+      // Verificar se o usuário já existe
+      const existingUser = await prisma.user.findUnique({
+        where: { email: userData.email },
+      });
 
-    const hashedPassword = bcrypt.hashSync(userData.password, 10); // 10 é o número de rounds
-    await prisma.user.create({
-      data: {
-        name: userData.name,
-        email: userData.email,
-        password: hashedPassword,
-        title: userData.title,
-        srcBI: userData.srcBI,
-      },
-    });
+      if (existingUser) {
+        console.log(`User with email ${userData.email} already exists.`);
+        continue; // Ignorar este usuário e continuar com o próximo
+      }
+
+      const hashedPassword = bcrypt.hashSync(userData.password, 10); // 10 é o número de rounds
+      await prisma.user.create({
+        data: {
+          name: userData.name,
+          email: userData.email,
+          password: hashedPassword,
+          title: userData.title,
+          srcBI: userData.srcBI,
+        },
+      });
+
+      console.log(`User with email ${userData.email} created successfully.`);
+    } catch (error) {
+      console.error(`Error creating user with email ${userData.email}:`, error);
+    }
   }
 }
 

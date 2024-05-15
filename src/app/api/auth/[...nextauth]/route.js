@@ -1,51 +1,76 @@
-const { PrismaClient } = require("@prisma/client");
-const bcrypt = require("bcryptjs");
-const fs = require("fs");
-const path = require("path");
+import NextAuth, { NextAuthOptions, Session, User } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-async function main() {
-  const usersPath = path.resolve(__dirname, "users.json");
-  const usersData = JSON.parse(fs.readFileSync(usersPath, "utf-8"));
-
-  for (const userData of usersData) {
-    try {
-      // Verificar se o usuário já existe
-      const existingUser = await prisma.user.findUnique({
-        where: { email: userData.email },
-      });
-
-      if (existingUser) {
-        console.log(`User with email ${userData.email} already exists.`);
-        continue; // Ignorar este usuário e continuar com o próximo
-      }
-
-      const hashedPassword = bcrypt.hashSync(userData.password, 10); // 10 é o número de rounds
-      await prisma.user.create({
-        data: {
-          name: userData.name,
-          email: userData.email,
-          password: hashedPassword,
-          title: userData.title,
-          srcBI: userData.srcBI,
+const options = {
+  pages: {
+    signIn: "/",
+  },
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: {
+          label: "Email",
+          type: "text",
+          placeholder: "jsmith@example.com",
         },
-      });
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials, req) {
+        if (!credentials) {
+          return null;
+        }
 
-      console.log(`User with email ${userData.email} created successfully.`);
-    } catch (error) {
-      console.error(`Error creating user with email ${userData.email}:`, error);
-    }
-  }
-}
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
 
-main()
-  .then(() => {
-    console.log("Users seeded successfully.");
-  })
-  .catch((error) => {
-    console.error("Error seeding users:", error);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+        if (user && bcrypt.compareSync(credentials.password, user.password)) {
+          return {
+            id: user.id.toString(),
+            name: user.name,
+            email: user.email,
+            title: user.title,
+            srcBI: user.srcBI,
+          };
+        }
+
+        return null;
+      },
+    }),
+  ],
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async session({ session, token }) {
+      session.userId = token.id;
+      session.user = {
+        id: token.id,
+        email: token.email,
+        name: token.name,
+        title: token.title,
+        srcBI: token.srcBI,
+      };
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.email = user.email;
+        token.name = user.name;
+        token.title = user.title;
+        token.srcBI = user.srcBI;
+      }
+      return token;
+    },
+  },
+};
+
+const authHandler = (req, res) => NextAuth(req, res, options);
+
+export { authHandler as GET, authHandler as POST };
