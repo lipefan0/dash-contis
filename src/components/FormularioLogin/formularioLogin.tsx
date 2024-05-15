@@ -2,18 +2,25 @@
 
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
 
-export default function LoginPage() {
+function LoginForm() {
   const searchParams = useSearchParams();
+  const [errorLogin, setErrorLogin] = useState<string | null>(null);
 
-  const errorLogin = searchParams.get("error");
+  useEffect(() => {
+    const error = searchParams.get("error");
+    if (error) {
+      setErrorLogin(error);
+    }
+  }, [searchParams]);
 
   async function login(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = {
-      email: formData.get("email"),
-      password: formData.get("password"),
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
     };
 
     signIn("credentials", {
@@ -48,9 +55,17 @@ export default function LoginPage() {
       </button>
       {errorLogin === "CredentialsSignin" && (
         <div className="text-red-400 mt-4">
-          Usuário ou senha esta errado, tente novamente
+          Usuário ou senha está errado, tente novamente
         </div>
       )}
     </form>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LoginForm />
+    </Suspense>
   );
 }
