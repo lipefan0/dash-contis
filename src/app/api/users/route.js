@@ -1,25 +1,78 @@
-import { NextResponse } from "next/server";
+import NextAuth from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-export async function GET(request) {
-  try {
-    const users = await prisma.user.findMany({
-      include: {
-        accesses: true,
+const options = {
+  pages: {
+    signIn: "/",
+  },
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: {
+          label: "Email",
+          type: "text",
+          placeholder: "jsmith@example.com",
+        },
+        password: { label: "Password", type: "password" },
       },
-    });
-    console.log("Fetched users:", users); // Log dos usuários obtidos
-    return NextResponse.json(users);
-  } catch (error) {
-    console.error("Error fetching users:", error); // Log detalhado do erro
-    return NextResponse.json(
-      { error: `Error fetching users: ${error.message}` },
-      { status: 500 }
-    );
-  }
-}
+      async authorize(credentials) {
+        if (!credentials) {
+          return null;
+        }
 
-// Remova a linha 'export const runtime = 'edge';'
-// Se estiver presente, remova o runtime edge.
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
+
+        if (user && bcrypt.compareSync(credentials.password, user.password)) {
+          return {
+            id: user.id.toString(),
+            name: user.name,
+            email: user.email,
+            title: user.title,
+            srcBI: user.srcBI,
+          };
+        }
+
+        return null;
+      },
+    }),
+  ],
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async session({ session, token }) {
+      if (token) {
+        session.userId = token.id;
+        session.user = {
+          id: token.id,
+          email: token.email,
+          name: token.name,
+          title: token.title,
+          srcBI: token.srcBI,
+        };
+      }
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.email = user.email;
+        token.name = user.name;
+        token.title = user.title;
+        token.srcBI = user.srcBI;
+      }
+      return token;
+    },
+  },
+};
+
+const handler = (req, res) => NextAuth(req, res, options);
+
+export { handler as GET, handler as POST };
