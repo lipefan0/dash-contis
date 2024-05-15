@@ -1,7 +1,7 @@
 {
   "build": {
     "env": {
-      "DATABASE_URL": "@database_url"
+      "DATABASE_URL": "postgres://default:migZx4vSPW3h@ep-morning-pond-a4nv3176.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
     }
   },
   "rewrites": [
