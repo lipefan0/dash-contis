@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -10,8 +10,19 @@ export default async function handler(
   if (req.method === "GET") {
     try {
       const users = await prisma.user.findMany({
-        include: {
-          accesses: true,
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          title: true,
+          srcBI: true,
+          accesses: {
+            select: {
+              id: true,
+              timestamp: true,
+              userId: true,
+            },
+          },
         },
       });
       res.status(200).json(users);
