@@ -8,6 +8,7 @@ import {
   CardContent,
   CardDescription,
 } from "../ui/card";
+import Image from "next/image";
 
 interface Props {
   title: string;
@@ -22,9 +23,9 @@ export default function DashboardCard(props: Props) {
     <div>
       <Card className="w-56 mb-6 flex flex-col justify-center items-center">
         <CardHeader className="flex flex-col justify-center items-center">
-          <img
-            alt={props.altImg}
-            src={props.img}
+          <Image
+            alt="{props.altImg}"
+            src="{props.img}"
             width={200}
             height={50}
             className="h-12"
