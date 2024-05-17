@@ -30,7 +30,7 @@ function LoginForm() {
   }
 
   return (
-    <form onSubmit={login}>
+    <form onSubmit={login} className="px-4">
       <label htmlFor="email">E-mail</label>
       <input
         className="rounded-xl bg-slate-100 py-1 px-2 w-full mb-4"
