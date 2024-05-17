@@ -31,6 +31,9 @@ export default function DashboardClient({ session }: DashboardClientProps) {
       } else if ((iframe as any).msRequestFullscreen) {
         // IE/Edge
         (iframe as any).msRequestFullscreen();
+      } else if ((iframe as any).webkitEnterFullscreen) {
+        // iOS Safari
+        (iframe as any).webkitEnterFullscreen();
       }
     }
   };
@@ -38,7 +41,7 @@ export default function DashboardClient({ session }: DashboardClientProps) {
   return (
     <div className="bg-blue-600 h-screen">
       <div className="flex md:justify-between md:flex-row flex-col items-center">
-        <div className="w-64 flex flex-col md:justify-between items-center md:h-[90vh] md:ml-8">
+        <div className="w-60 flex flex-col md:justify-between items-center md:h-[90vh]">
           <Image
             alt="Logo-Contis"
             src="/LOGO-CONTIS.svg"
@@ -48,15 +51,8 @@ export default function DashboardClient({ session }: DashboardClientProps) {
           <h1 className="text-white font-bold size-20">
             Dashboard {session?.user.name}
           </h1>
-          <div className="flex justify-between items-center w-full">
-            <ButtonLogou />
-            <button
-              className="bg-green-400 py-2 px-4 rounded-md font-semibold text-zinc-50"
-              onClick={handleFullScreen}
-            >
-              Tela Cheia
-            </button>
-          </div>
+          <ButtonLogou />
+          <button onClick={handleFullScreen}>Fullscreen</button>
         </div>
         <div className="h-[90%] w-[90%]">
           <PowerBI ref={iframeRef} title={session?.user.name} />
