@@ -41,7 +41,7 @@ export default function DashboardClient({ session }: DashboardClientProps) {
   return (
     <div className="bg-blue-600 h-screen">
       <div className="flex md:justify-between md:flex-row flex-col items-center">
-        <div className="w-60 flex flex-col md:justify-between items-center md:h-[90vh]">
+        <div className="w-64 flex flex-col md:justify-between items-center md:h-[90vh] md:ml-8">
           <Image
             alt="Logo-Contis"
             src="/LOGO-CONTIS.svg"
@@ -51,8 +51,20 @@ export default function DashboardClient({ session }: DashboardClientProps) {
           <h1 className="text-white font-bold size-20">
             Dashboard {session?.user.name}
           </h1>
-          <ButtonLogou />
-          <button onClick={handleFullScreen}>Fullscreen</button>
+          <div className="flex justify-between w-full">
+            <ButtonLogou />
+            <button
+              className="rounded-md collapse sm:visible py-2 px-4 bg-green-500 text-white font-bold"
+              onClick={handleFullScreen}
+            >
+              Tela Cheia
+            </button>
+          </div>
+        </div>
+        <div className="sm:hidden block mt-4">
+          <p className="font-bold text-white size-8 w-full h-full">
+            VIRE O CELULAR PARA VER O DASHBOARD
+          </p>
         </div>
         <div className="h-[90%] w-[90%]">
           <PowerBI ref={iframeRef} title={session?.user.name} />
