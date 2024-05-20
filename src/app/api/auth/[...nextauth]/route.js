@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-const options = {
+export const authOptions = {
   pages: {
     signIn: "/",
   },
@@ -73,6 +73,6 @@ const options = {
   },
 };
 
-const handler = (req, res) => NextAuth(req, res, options);
+const handler = (req, res) => NextAuth(req, res, authOptions);
 
 export { handler as GET, handler as POST };

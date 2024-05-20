@@ -1,4 +1,3 @@
-// src/components/DashboardClient.tsx
 "use client";
 
 import { useRef } from "react";
@@ -10,6 +9,8 @@ interface DashboardClientProps {
   session: {
     user: {
       name: string;
+      image?: string;
+      srcBI: string;
     };
   };
 }
@@ -49,7 +50,7 @@ export default function DashboardClient({ session }: DashboardClientProps) {
             height={500}
           />
           <h1 className="text-white font-bold size-20">
-            Dashboard {session?.user.name}
+            Dashboard {session.user.name}
           </h1>
           <div className="flex justify-between w-full">
             <ButtonLogou />
@@ -67,7 +68,11 @@ export default function DashboardClient({ session }: DashboardClientProps) {
           </p>
         </div>
         <div className="h-[90%] w-[90%]">
-          <PowerBI ref={iframeRef} title={session?.user.name} />
+          <PowerBI
+            ref={iframeRef}
+            title={session.user.name}
+            src={session.user.srcBI}
+          />
         </div>
       </div>
     </div>

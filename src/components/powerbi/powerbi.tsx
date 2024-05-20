@@ -3,15 +3,16 @@ import { forwardRef } from "react";
 
 interface PowerBIProps {
   title: string;
+  src: string;
 }
 
 const PowerBI = forwardRef<HTMLIFrameElement, PowerBIProps>(
-  ({ title }, ref) => (
+  ({ title, src }, ref) => (
     <div className="h-screen flex justify-center items-center flex-col">
       <iframe
         ref={ref}
         title={title}
-        src="https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+        src={src}
         allowFullScreen
         className="h-[90%] w-[90%] rounded-lg"
       ></iframe>

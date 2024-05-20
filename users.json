@@ -4,7 +4,7 @@
     "email": "felipe.fernandes@contis.com.br",
     "password": "123",
     "title": "MULTIPLIC FELIPE",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZWI4MTU4OWMtMTllZi00ZGM2LTljZDAtN2VhOTkwMjY4ODAzIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
   },
   {
     "name": "AdoroMato",
@@ -23,6 +23,13 @@
   {
     "name": "Alan Contis",
     "email": "alan@contis.com.br",
+    "password": "123",
+    "title": "MULTIPLIC FELIPE",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+  },
+  {
+    "name": "Fernando Contis",
+    "email": "fernando@contis.com.br",
     "password": "123",
     "title": "MULTIPLIC FELIPE",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
