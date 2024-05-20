@@ -9,8 +9,8 @@ interface DashboardClientProps {
   session: {
     user: {
       name: string;
-      image?: string;
-      srcBI: string;
+      title?: string;
+      srcBI?: string;
     };
   };
 }

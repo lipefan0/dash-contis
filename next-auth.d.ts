@@ -1,13 +1,29 @@
-import "next-auth";
+import NextAuth from "next-auth";
 
 declare module "next-auth" {
+  interface User {
+    id: int;
+    email: string;
+    name: string;
+    title: string;
+    srcBI: string;
+  }
+
   interface Session {
     user: {
-      id: string;
-      name: string;
+      id: int;
       email: string;
+      name: string;
       title: string;
       srcBI: string;
-    } & DefaultSession["user"]; // Inclui os campos padrão do usuário com campos personalizados
+    };
+  }
+
+  interface JWT {
+    id: int;
+    email: string;
+    name: string;
+    title: string;
+    srcBI: string;
   }
 }

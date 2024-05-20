@@ -1,11 +1,10 @@
-import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-export const authOptions = {
+const authOptions = {
   pages: {
     signIn: "/",
   },
@@ -34,8 +33,8 @@ export const authOptions = {
             id: user.id.toString(),
             name: user.name,
             email: user.email,
-            title: user.title,
-            srcBI: user.srcBI,
+            title: user.title || "", // Garantir que title seja uma string
+            srcBI: user.srcBI || "", // Garantir que srcBI seja uma string
           };
         }
 
@@ -48,16 +47,13 @@ export const authOptions = {
   },
   callbacks: {
     async session({ session, token }) {
-      if (token) {
-        session.userId = token.id;
-        session.user = {
-          id: token.id,
-          email: token.email,
-          name: token.name,
-          title: token.title,
-          srcBI: token.srcBI,
-        };
-      }
+      session.user = {
+        id: token.id,
+        email: token.email,
+        name: token.name,
+        title: token.title || "", // Garantir que title seja uma string
+        srcBI: token.srcBI || "", // Garantir que srcBI seja uma string
+      };
       return session;
     },
     async jwt({ token, user }) {
@@ -65,14 +61,12 @@ export const authOptions = {
         token.id = user.id;
         token.email = user.email;
         token.name = user.name;
-        token.title = user.title;
-        token.srcBI = user.srcBI;
+        token.title = user.title || ""; // Garantir que title seja uma string
+        token.srcBI = user.srcBI || ""; // Garantir que srcBI seja uma string
       }
       return token;
     },
   },
 };
 
-const handler = (req, res) => NextAuth(req, res, authOptions);
-
-export { handler as GET, handler as POST };
+export { authOptions };

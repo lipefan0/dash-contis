@@ -1,6 +1,6 @@
 import DashboardClient from "@/components/DashboardClient/dashboardClient";
-import { getServerSession } from "next-auth/next"; // Use next-auth/next para Next.js 13
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/auth/authOption";
 import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
@@ -11,7 +11,7 @@ export default async function Dashboard() {
     return null;
   }
 
-  console.log(session.user);
+  console.log(session.user); // Verifique aqui se title e srcBI estão presentes
 
   return <DashboardClient session={session} />;
 }

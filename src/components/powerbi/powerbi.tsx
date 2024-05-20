@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 
 interface PowerBIProps {
   title: string;
-  src: string;
+  src?: string;
 }
 
 const PowerBI = forwardRef<HTMLIFrameElement, PowerBIProps>(
