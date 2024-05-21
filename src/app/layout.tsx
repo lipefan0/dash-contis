@@ -9,7 +9,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Dashboard BPOUU",
+  title: "Dashboard BPOOU",
   description:
     "Dashboard criado para visualizar relatórios de forma dinamica e acessível.",
 };
