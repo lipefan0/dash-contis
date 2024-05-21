@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "Dashboard BPOOU",
   description:
     "Dashboard criado para visualizar relatórios de forma dinamica e acessível.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -21,9 +25,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <header>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-      </header>
       <body
         className={cn(
           "min-h-screen bg-blue-600 font-sans antialiased",
