@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <header>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      </header>
       <body
         className={cn(
           "min-h-screen bg-blue-600 font-sans antialiased",
