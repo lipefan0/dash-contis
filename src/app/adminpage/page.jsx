@@ -1,6 +1,6 @@
 import DashboardCard from "@/components/DashboardsCards/dashboardsCards";
 import { getServerSession } from "next-auth/next";
-import { adminAuthOptions } from "@/app/api/auth/[...nextauth]/route";
+import { adminAuthOptions } from "@/app/api/auth/authOptions";
 import { redirect } from "next/navigation";
 
 const authorizedEmail = "alan@contis.com.br"; // substitua pelo email do usuário autorizado
