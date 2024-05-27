@@ -73,6 +73,47 @@ export const authOptions = {
   },
 };
 
+export const adminAuthOptions = {
+  pages: {
+    signIn: "/adminpage",
+  },
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: {
+          label: "Email",
+          type: "text",
+          placeholder: "jsmith@example.com",
+        },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials) {
+          return null;
+        }
+
+        const admin = await prisma.admin.findUnique({
+          where: { email: credentials.email },
+        });
+
+        if (admin && bcrypt.compareSync(credentials.password, admin.password)) {
+          return {
+            id: admin.id.toString(),
+            name: admin.name,
+            email: admin.email,
+          };
+        }
+
+        return null;
+      },
+    }),
+  ],
+  session: {
+    strategy: "jwt",
+  },
+};
+
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
