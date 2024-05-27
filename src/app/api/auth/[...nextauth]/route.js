@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
-export const authOptions = {
+const authOptions = {
   pages: {
     signIn: "/",
   },
@@ -73,7 +73,7 @@ export const authOptions = {
   },
 };
 
-export const adminAuthOptions = {
+const adminAuthOptions = {
   pages: {
     signIn: "/adminpage",
   },
@@ -84,7 +84,7 @@ export const adminAuthOptions = {
         email: {
           label: "Email",
           type: "text",
-          placeholder: "jsmith@example.com",
+          placeholder: "admin@example.com",
         },
         password: { label: "Password", type: "password" },
       },
@@ -116,4 +116,5 @@ export const adminAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+export default handler;
+export { adminAuthOptions };
