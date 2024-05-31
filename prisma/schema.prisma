@@ -23,3 +23,12 @@ model Access {
   userId    Int
   user      User     @relation(fields: [userId], references: [id])
 }
+
+model DashboardCard {
+  id      Int    @id @default(autoincrement())
+  linkBI  String
+  title   String
+  img     String
+  altImg  String
+}
+

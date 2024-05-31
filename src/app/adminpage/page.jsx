@@ -2,42 +2,52 @@ import DashboardCard from "@/components/DashboardsCards/dashboardsCards";
 import { getServerSession } from "next-auth/next";
 import { adminAuthOptions } from "@/app/api/auth/authOptions";
 import { redirect } from "next/navigation";
+import Image from "next/image";
+import ButtonLogout from "@/components/ButtonLogout/buttonLogout";
+import prisma from "@/lib/prisma"; // ajuste o caminho conforme necessário
 
-const authorizedEmail = "alan@contis.com.br"; // substitua pelo email do usuário autorizado
+// Lista de e-mails autorizados
+const authorizedEmails = [
+  "alan@contis.com.br",
+  "felipe.fernandes@contis.com.br",
+]; // substitua pelos e-mails dos usuários autorizados
 
 export default async function AdminPage() {
   const session = await getServerSession(adminAuthOptions);
 
-  if (!session || session.user.email !== authorizedEmail) {
+  // Verificação de múltiplos e-mails autorizados
+  if (!session || !authorizedEmails.includes(session.user.email)) {
     redirect("/");
     return null;
   }
 
+  // Buscar os dados dos cartões do dashboard no banco de dados
+  const dashboardCards = await prisma.DashboardCard.findMany();
+
   return (
-    <div className="mx-auto">
-      <div className="grid grid-cols-5 justify-stretch mx-6 my-4">
-        <DashboardCard
-          linkBI="https://app.powerbi.com/view?r=eyJrIjoiOTI2NGMxMTEtYTE4NS00ZjM5LTg1MzEtZDVkMDY3Njk2Mzg0IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
-          title="GlogalK-v2"
-          description="Descrição"
-          img="/image-cards/globalk.png"
-          altImg="GlobalK"
-        />
-        <DashboardCard
-          linkBI="https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
-          title="GlogalK-v1"
-          description="Descrição"
-          img="/image-cards/globalk.png"
-          altImg="GlobalK"
-        />
-        <DashboardCard
-          linkBI="https://www.google.com"
-          title="GlogalK"
-          description="Descrição"
-          img="/image-cards/globalk.png"
-          altImg="GlobalK"
-        />
-        {/* Adicione mais DashboardCards conforme necessário */}
+    <div>
+      <div className="pr-10 pt-4">
+        <div className="flex justify-between">
+          <Image
+            width={300}
+            height={200}
+            src="/LOGO-CONTIS.svg"
+            alt="Logo Contis"
+          />
+          <ButtonLogout className="mr-4" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-4">
+        {dashboardCards.map((card) => (
+          <DashboardCard
+            key={card.id}
+            linkBI={card.linkBI}
+            title={card.title}
+            img={card.img}
+            altImg={card.altImg}
+          />
+        ))}
       </div>
     </div>
   );

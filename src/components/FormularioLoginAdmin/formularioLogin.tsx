@@ -26,7 +26,7 @@ function LoginForm() {
 
     signIn("credentials", {
       ...data,
-      callbackUrl: "/dashboard",
+      callbackUrl: "/adminpage",
     });
   }
 
@@ -55,8 +55,8 @@ function LoginForm() {
         >
           Login
         </button>
-        <Link className="mt-4 hover:text-slate-400" href={"/loginadmin"}>
-          Logar na pagina admin
+        <Link className="mt-4 hover:text-slate-400" href={"/"}>
+          Logar na pagina cliente
         </Link>
       </div>
       {errorLogin === "CredentialsSignin" && (
@@ -68,7 +68,7 @@ function LoginForm() {
   );
 }
 
-export default function LoginPage() {
+export default function LoginPageAdmin() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div>

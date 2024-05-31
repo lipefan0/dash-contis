@@ -40,7 +40,7 @@ export default function DashboardClient({ session }: DashboardClientProps) {
   };
 
   return (
-    <div className="bg-blue-600 h-screen">
+    <div className="bg-[#081441] h-screen">
       <div className="flex md:justify-between md:flex-row flex-col items-center">
         <div className="w-64 flex flex-col md:justify-between items-center md:h-[90vh] md:ml-8">
           <Image
