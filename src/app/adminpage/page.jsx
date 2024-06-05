@@ -10,6 +10,7 @@ import prisma from "@/lib/prisma"; // ajuste o caminho conforme necessário
 const authorizedEmails = [
   "alan@contis.com.br",
   "felipe.fernandes@contis.com.br",
+  "amanda@contis.com.br",
 ]; // substitua pelos e-mails dos usuários autorizados
 
 export default async function AdminPage() {
