@@ -45,13 +45,7 @@ export default function DashboardCard(props: Props) {
     <div className="flex content-center justify-center m-4">
       <Card className="w-[300px] h-[320px] flex flex-col justify-between items-center">
         <CardHeader className="flex flex-col items-center w-full">
-          <Image
-            alt={props.altImg}
-            src={props.img}
-            width={200}
-            height={100}
-            className="h-[100px]"
-          />
+          <Image alt={props.altImg} src={props.img} width={250} height={90} />
           <CardTitle>{props.title}</CardTitle>
         </CardHeader>
         <CardFooter className="flex justify-evenly w-full">
