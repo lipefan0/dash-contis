@@ -30,5 +30,6 @@ model DashboardCard {
   title   String
   img     String
   altImg  String
+  status String
 }
 

@@ -18,6 +18,7 @@ interface Props {
   altImg: string;
   img: string;
   linkBI: string;
+  status: string;
 }
 
 export default function DashboardCard(props: Props) {
@@ -55,6 +56,9 @@ export default function DashboardCard(props: Props) {
             />
           </div>
           <CardTitle>{props.title}</CardTitle>
+          <CardDescription>
+            <span>{props.status}</span>
+          </CardDescription>
         </CardHeader>
         <CardFooter className="flex justify-evenly w-full">
           <Button

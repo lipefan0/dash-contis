@@ -47,6 +47,7 @@ export default async function AdminPage() {
             title={card.title}
             img={card.img}
             altImg={card.altImg}
+            status={card.status}
           />
         ))}
       </div>

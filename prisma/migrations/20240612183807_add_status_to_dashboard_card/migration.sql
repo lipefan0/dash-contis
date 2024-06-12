@@ -5,6 +5,7 @@ CREATE TABLE "DashboardCard" (
     "title" TEXT NOT NULL,
     "img" TEXT NOT NULL,
     "altImg" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
 
     CONSTRAINT "DashboardCard_pkey" PRIMARY KEY ("id")
 );
