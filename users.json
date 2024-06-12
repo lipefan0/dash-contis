@@ -47,5 +47,19 @@
     "password": "123",
     "title": "Amanda",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTk4NGExYWEtZTI5Yi00ZGJlLWJhMmItZmMzZGY5ZGE0OGUzIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9"
+  },
+  {
+    "name": "Xtratus",
+    "email": "xtratus@contis.com.br",
+    "password": "Xtratus@2024",
+    "title": "Xtratus",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZGY3ZjZhZmEtN2E1YS00ZWZlLWEwNDUtNzY2YTUyY2M4YzdmIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
+  },
+  {
+    "name": "MR Repair",
+    "email": "mr@contis.com.br",
+    "password": "Mr@2024",
+    "title": "MR Repair",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTViN2FhMWYtYzU3MS00ZGYxLWJlNjEtMTZhZmZkZGEwZGRlIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   }
 ]
