@@ -61,5 +61,12 @@
     "password": "Mr@2024",
     "title": "MR Repair",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTViN2FhMWYtYzU3MS00ZGYxLWJlNjEtMTZhZmZkZGEwZGRlIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+  },
+  {
+    "name": "Leticia",
+    "email": "leticia@contis.com.br",
+    "password": "Contis@2024",
+    "title": "Leticia",
+    "srcBI": ""
   }
 ]
