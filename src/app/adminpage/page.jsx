@@ -12,6 +12,7 @@ const authorizedEmails = [
   "felipe.fernandes@contis.com.br",
   "amanda.calheiros@contis.com.br",
   "leticia@contis.com.br",
+  "fernando@contis.com.br",
 ]; // substitua pelos e-mails dos usuários autorizados
 
 export default async function AdminPage() {

@@ -11,19 +11,16 @@ async function main() {
 
   for (const userData of usersData) {
     try {
-      // Verificar se o usuário já existe
-      const existingUser = await prisma.user.findUnique({
-        where: { email: userData.email },
-      });
-
-      if (existingUser) {
-        console.log(`User with email ${userData.email} already exists.`);
-        continue; // Ignorar este usuário e continuar com o próximo
-      }
-
       const hashedPassword = bcrypt.hashSync(userData.password, 10); // 10 é o número de rounds
-      await prisma.user.create({
-        data: {
+      await prisma.user.upsert({
+        where: { email: userData.email },
+        update: {
+          name: userData.name,
+          password: hashedPassword,
+          title: userData.title,
+          srcBI: userData.srcBI,
+        },
+        create: {
           name: userData.name,
           email: userData.email,
           password: hashedPassword,
@@ -32,9 +29,12 @@ async function main() {
         },
       });
 
-      console.log(`User with email ${userData.email} created successfully.`);
+      console.log(`User with email ${userData.email} upserted successfully.`);
     } catch (error) {
-      console.error(`Error creating user with email ${userData.email}:`, error);
+      console.error(
+        `Error upserting user with email ${userData.email}:`,
+        error
+      );
     }
   }
 }

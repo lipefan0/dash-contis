@@ -14,13 +14,6 @@
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiOTI2NGMxMTEtYTE4NS00ZjM5LTg1MzEtZDVkMDY3Njk2Mzg0IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
   },
   {
-    "name": "CarolContis",
-    "email": "carol@contis.com.br",
-    "password": "123",
-    "title": "MULTIPLIC FELIPE",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
-  },
-  {
     "name": "Alan Contis",
     "email": "alan@contis.com.br",
     "password": "123",
@@ -30,7 +23,7 @@
   {
     "name": "Fernando Contis",
     "email": "fernando@contis.com.br",
-    "password": "123",
+    "password": "Contis@2024",
     "title": "MULTIPLIC FELIPE",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNWVhYTI3ZjUtYzU3Mi00MTRkLTg4MTMtZjY3OGZhMGVmNDY3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   },
@@ -53,20 +46,41 @@
     "email": "xtratus@contis.com.br",
     "password": "Xtratus@2024",
     "title": "Xtratus",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZGY3ZjZhZmEtN2E1YS00ZWZlLWEwNDUtNzY2YTUyY2M4YzdmIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZjY5N2VjZGQtYjcyOS00MGE2LTg3YTQtMWIzMzZiMTE0ZDIwIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection1170ae11de1564156d99"
   },
   {
     "name": "MR Repair",
     "email": "mr@contis.com.br",
     "password": "Mr@2024",
     "title": "MR Repair",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTViN2FhMWYtYzU3MS00ZGYxLWJlNjEtMTZhZmZkZGEwZGRlIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZDgyNzA0YTMtNjQwOS00MzgwLWEzYjAtMWMxMDE5ZDc4NTk2IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   },
   {
     "name": "Leticia",
     "email": "leticia@contis.com.br",
     "password": "Contis@2024",
     "title": "Leticia",
-    "srcBI": ""
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNjNlMjE4YzMtZjY1Yi00ZmQ0LTlmZjAtNzFkZjAwMTE4OWYxIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+  },
+  {
+    "name": "Carol Contis",
+    "email": "claudia.caroline@contis.com.br",
+    "password": "123",
+    "title": "Carol",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNjNlMjE4YzMtZjY1Yi00ZmQ0LTlmZjAtNzFkZjAwMTE4OWYxIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+  },
+  {
+    "name": "Rotha",
+    "email": "rotha@contis.com.br",
+    "password": "Rotha@2024",
+    "title": "Rotha",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNzFmNmNmNmYtY2QwNS00ZjRiLTg2ODItZjI5OTI2MjdiNDQ5IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=e6a6193e688b0dadcf9a"
+  },
+  {
+    "name": "Bicafe",
+    "email": "bicafe@contis.com.br",
+    "password": "Bicafe@2024",
+    "title": "Bicafe dashboard",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNzlhY2Q0MzQtN2I3Ni00MzcwLTk1OWMtMDdiODE4ODMyMTkyIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=eee9c389301302b20494"
   }
 ]
