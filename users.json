@@ -42,6 +42,13 @@
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTk4NGExYWEtZTI5Yi00ZGJlLWJhMmItZmMzZGY5ZGE0OGUzIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9"
   },
   {
+    "name": "Alana",
+    "email": "alana.carlota@contis.com.br",
+    "password": "Contis@2024!",
+    "title": "Alana",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiMTk4NGExYWEtZTI5Yi00ZGJlLWJhMmItZmMzZGY5ZGE0OGUzIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9"
+  },
+  {
     "name": "Xtratus",
     "email": "xtratus@contis.com.br",
     "password": "Xtratus@2024",
@@ -53,7 +60,7 @@
     "email": "mr@contis.com.br",
     "password": "Mr@2024",
     "title": "MR Repair",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiZDgyNzA0YTMtNjQwOS00MzgwLWEzYjAtMWMxMDE5ZDc4NTk2IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiN2ZkMTUzNDktZjBiZi00M2NjLThmYTQtNmI0NjRkN2FkNzY4IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=ReportSection"
   },
   {
     "name": "Leticia",
@@ -74,7 +81,7 @@
     "email": "rotha@contis.com.br",
     "password": "Rotha@2024",
     "title": "Rotha",
-    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNzFmNmNmNmYtY2QwNS00ZjRiLTg2ODItZjI5OTI2MjdiNDQ5IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=e6a6193e688b0dadcf9a"
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiODMyNjdjOWQtMTdjYS00YjI3LTgwMGMtZTM2ZWFhNmQ0YjU3IiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=e6a6193e688b0dadcf9a"
   },
   {
     "name": "Bicafe",
@@ -82,5 +89,12 @@
     "password": "Bicafe@2024",
     "title": "Bicafe dashboard",
     "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNzlhY2Q0MzQtN2I3Ni00MzcwLTk1OWMtMDdiODE4ODMyMTkyIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=eee9c389301302b20494"
+  },
+  {
+    "name": "StarTati",
+    "email": "startati@contis.com.br",
+    "password": "Startati@2024",
+    "title": "StarTati dashboard",
+    "srcBI": "https://app.powerbi.com/view?r=eyJrIjoiNjk4ZDQ1YjMtMzc3Yy00ZDZkLTlkNzgtNGQ2ZWYxNGJiNjcxIiwidCI6IjNlNTQyNjBlLTQyMGItNDgwMy1iZjlhLTVkMWEwYzgwYjUxMyJ9&pageName=d3a7b5d2754f45f42241"
   }
 ]
